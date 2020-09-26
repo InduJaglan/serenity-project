@@ -1,0 +1,24 @@
+#1 Maven retry command for failed scenario ->>>
+mvn clean verify -Dfailsafe.rerunFailingTestsCount=3
+#2 Passing multiple Parameter at once ->>>
+mvn clean verify -Dcucumber.options="SomeThing" -Dcucumber.options="SomeThing" -Dcucumber.options="SomeThing"
+#3 Run the specific feature file ->>>
+mvn clean verify -Dcucumber.options="/src/test/resources/features/services/gorest/GetCommentOfSpecificUser.feature"
+#4 Run the tagged scenario(s) ->>>
+mvn clean verify -Dcucumber.options="–-tag @api"
+#5
+mvn verify -Dcucumber.options="–help"
+# Run on specific environment
+mvn verify -Denvironment=staging
+
+
+
+-----------------------------------------------------------------------------------------------------
+#Readymade classes for random string generation
+org.apache.commons.lang3.RandomStringUtils
+org.apache.commons.text.RandomStringGenerator
+
+
+------------------------------------------------------------------------------------------------------
+# Link to convert the API request body in to pojo class
+http://pojo.sodhanalibrary.com/

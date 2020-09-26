@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: com.myautomationwork.CucumberTestSuite
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 1, Skipped: 0, Time elapsed: 227.127 s <<< FAILURE! - in com.myautomationwork.CucumberTestSuite
+Login with invalid credential(Login verification)  Time elapsed: 212.399 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: HomePage.loginButton (tried for 200 second(s) with 250 milliseconds interval)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Timed out after 2 seconds. Element not found
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DELL-3400-QA4', ip: '10.240.0.70', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: driver.version: unknown
+
+Get specific user comment(Get comment of specific user)  Time elapsed: 3.468 s  <<< FAILURE!
+java.lang.AssertionError: expected:<200> but was:<404>
+
+create user with valid date(Create User)  Time elapsed: 8.871 s  <<< FAILURE!
+java.lang.AssertionError: expected:<201> but was:<404>
+
