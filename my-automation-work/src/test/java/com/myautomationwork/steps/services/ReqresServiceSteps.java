@@ -40,7 +40,7 @@ public class ReqresServiceSteps {
         DoRegistrationRequestModel doRegistrationRequestModel = new DoRegistrationRequestModel();
         doRegistrationRequestModel.setEmail("testemail" + RandomGenerator.randomAlphabetic(3) + "@mailinator.com");
         doRegistrationRequestModel.setPassword(RandomGenerator.randomAlphabetic(10));
-        ServiceConfig.response = 
+        //ServiceConfig.response =
     }
 
     @Then("I see response for successful registration")

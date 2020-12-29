@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Create User" skipped="0" tests="1" time="8.86" timestamp="2020-09-03 05:08:35"><testcase name="create user with valid date"><failure message="expected:&lt;201&gt; but was:&lt;404&gt;" type="java.lang.AssertionError">expected:&lt;201&gt; but was:&lt;404&gt;</failure><system-err>expected:&lt;201&gt; but was:&lt;404&gt;&#13;
-com.myautomationwork.steps.services.ReqresServiceSteps.iSendRequestToCreateUserWithValidData(ReqresServiceSteps.java:25)&#13;
-✽.I send request to create user with valid data(file:src/test/resources/features/services/reqres/CreateUser.feature:4)&#13;
-</system-err></testcase></testsuite>
