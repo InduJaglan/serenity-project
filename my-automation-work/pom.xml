@@ -18,7 +18,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <sernenity.version>2.1.2</sernenity.version>
         <cucumber.version>4.8.0</cucumber.version>
-        <included.packages>-Dincluded.packages=discover</included.packages>
+        <included.packages>-Dincluded.packages=my-automation-work</included.packages>
         <included.adapters>-Dincluded.adapters=coverage:complexity:dependency</included.adapters>
         <!--        <tags></tags>-->
         <!--        <parallel.tests>4</parallel.tests>-->
