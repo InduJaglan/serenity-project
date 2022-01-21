@@ -47,7 +47,7 @@ public class DisplayManagePage extends PageObject {
     @FindBy(xpath = "//*[contains(@id,'custom-panel-')]//h5")
     List<WebElement> newAddedFolder;
     
-    @FindBy(xpath = "(//button[contains(@class,'btn view')])[1]")
+    @FindBy(xpath = "(//button[contains(@class,'btn view')])[3]")
     WebElement viewAllFolder;
 
     @FindBy(xpath = "//*[@id='custom-panel-0-header']//div/div//button[1]")
@@ -58,6 +58,36 @@ public class DisplayManagePage extends PageObject {
     
     @FindBy(xpath = "//button[contains(@class,'delete')]")
     WebElement deleteFolderConfirmation;
+    
+    
+    @FindBy(xpath = "(//*[@class='list-item'])[2]")
+    WebElement mediaOption;
+    
+    @FindBy(xpath = "//button[@class='btn']")
+    WebElement addMedia;
+    
+    @FindBy(xpath = "//*[@id='ngb-nav-1']")
+    WebElement mediaApp;
+    
+    @FindBy(xpath = "//*[@id='ngb-nav-0']")
+    WebElement myMediaApp;
+    
+    @FindBy(xpath = "(//button[contains(@class,'btn float')])[1]")
+    WebElement addWebPage;
+    
+    @FindBy(xpath = "//input[@name='url']")
+    WebElement newWebPageURL;
+    
+    @FindBy(xpath = "//input[@name='title']")
+    WebElement webPageName;
+    
+    @FindBy(xpath = "//*[@type='submit']")
+    WebElement addNewWebPage;
+    
+    @FindBy(xpath = "//*[contains(@class,'media-nav-tab-table')]//table//tr//td[1]")
+    List<WebElement> newAddedWebPage;
+    
+    
     public CommonMethods _commonMethods;
     public String oldName=null;
   
@@ -65,7 +95,8 @@ public class DisplayManagePage extends PageObject {
     public String newFolderName=null;
     public String updatedFolderName=null;
     String toBedeletedFolderName=null;
-    
+    public String newWebPageName=null;
+    public String newWebPageurl=null;
     public DisplayManagePage() {
     	
   _commonMethods=new CommonMethods();
@@ -115,7 +146,8 @@ public Boolean validateFolderName() throws InterruptedException {
     Boolean match=false;
 
     waitABit(5000);
-    _commonMethods.scrollToViewElement(viewAllFolder);
+  
+   _commonMethods.scrollToViewElement(viewAllFolder);
     waitABit(2000);
     viewAllFolder.click();
     waitABit(2000);
@@ -160,6 +192,7 @@ public Boolean validateFolderName() throws InterruptedException {
         Boolean match=false;
 
         waitABit(5000);
+        System.out.println("Element is visible"+_commonMethods.isElementPresent(viewAllFolder));
         _commonMethods.scrollToViewElement(viewAllFolder);
         waitABit(2000);
         viewAllFolder.click();
@@ -190,6 +223,68 @@ public Boolean validateFolderName() throws InterruptedException {
        for(WebElement newFolder:newAddedFolder){
 
             if(toBedeletedFolderName.equals(newFolder.getText()))
+            
+                match=true;}
+        return match;
+        
+    }
+    
+    public void clickMediaOption() throws InterruptedException {
+        this.switchOnDisplayManagePage();
+        waitABit(2000);
+        mediaOption.click();
+
+    }
+    
+    public void clickMyMediatab() throws InterruptedException {
+       
+        waitABit(2000);
+        addMedia.click();
+
+    }
+    
+    public Boolean verifyMediaApp() throws InterruptedException {
+        waitABit(5000);
+        if(mediaApp.getAttribute("aria-selected").equals("true"))
+        	return true;
+        else
+        	return false;
+      
+      
+    }
+    
+    public void addWebPageDetails() throws InterruptedException {
+
+    	waitABit(2000);
+    	  addWebPage.click();
+    	  waitABit(2000);
+        newWebPageName=RandomGenerator.generateString(5);
+        webPageName.click();
+        webPageName.clear();
+        waitABit(2000);
+           webPageName.sendKeys(newWebPageName);
+           newWebPageurl="https://www."+RandomGenerator.generateString(10)+"@automation.com";
+           newWebPageURL.sendKeys(newWebPageurl);
+           waitABit(2000);
+           selectScreen.click();
+           waitABit(2000);
+           screenType.click();
+           waitABit(2000);
+           webPageName.click();
+       waitABit(2000);
+       addNewWebPage.click();
+       
+   }
+    
+    public Boolean verifyWebPage() throws InterruptedException {
+    	Boolean match=false;
+
+        waitABit(5000);
+        myMediaApp.click();
+        waitABit(2000);
+       for(WebElement newpage:newAddedWebPage){
+
+            if(newWebPageName.equals(newpage.getText()))
             
                 match=true;}
         return match;

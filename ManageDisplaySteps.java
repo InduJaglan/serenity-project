@@ -61,6 +61,33 @@ public class ManageDisplaySteps
     {
     	Assert.assertFalse(managePage.validateDeletedFolderName());
     }
+    
+    //Add Media Step def
+    
+    @When("Click on the Media button")
+    public void clickMediaOption() throws InterruptedException {
+        managePage.clickMediaOption();
+    }
+    
+    @And("Click on My Media tab")
+    public void clickMyMediatab() throws InterruptedException {
+        managePage.clickMyMediatab();
+    }
+    
+    @Then("Verify that Customer is naviagted on Media App Store")
+    public void verifyMediaApp() throws InterruptedException {
+    	Assert.assertTrue(managePage.verifyMediaApp());
+    }
+    
+    @When("click on Add WebPage and Enter Web Page Details")
+    public void clickAddWebPageDetails() throws InterruptedException {
+        managePage.addWebPageDetails();
+    }
+    
+    @Then("Verify that Web Page is created succesfully")
+    public void verifyWebPage() throws InterruptedException {
+    	Assert.assertTrue(managePage.verifyWebPage());
+    }
 
 
 
