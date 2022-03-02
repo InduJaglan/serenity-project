@@ -45,10 +45,4 @@ public class RandomGenerator {
         RandomStringGenerator randomStringGenerator = new RandomStringGenerator.Builder().withinRange('a', 'z').build();
         return randomStringGenerator.generate(length);
     }
-
-    public static String generateString(int minLengthInclusive, int maxLengthInclusive) {
-        RandomStringGenerator randomStringGenerator = new RandomStringGenerator.Builder().withinRange('a', 'z').build();
-        return randomStringGenerator.generate(minLengthInclusive, maxLengthInclusive);
-    }
-
 }
